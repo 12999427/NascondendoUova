@@ -1,0 +1,114 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "MyQueueLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/MyQueueLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyQueueLib.dll": {}
+        }
+      },
+      "MyStackLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/MyStackLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyStackLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MyQueueLib/1.0.0": {
+      "type": "project",
+      "path": "../../MyStack_And_MyQueue_CS_Updated/MyStack_And_MyQueue_CS_Updated/MyQueueLib/MyQueueLib/MyQueueLib.csproj",
+      "msbuildProject": "../../MyStack_And_MyQueue_CS_Updated/MyStack_And_MyQueue_CS_Updated/MyQueueLib/MyQueueLib/MyQueueLib.csproj"
+    },
+    "MyStackLib/1.0.0": {
+      "type": "project",
+      "path": "../../MyStack_And_MyQueue_CS_Updated/MyStack_And_MyQueue_CS_Updated/MyStackLib/MyStackLib/MyStackLib.csproj",
+      "msbuildProject": "../../MyStack_And_MyQueue_CS_Updated/MyStack_And_MyQueue_CS_Updated/MyStackLib/MyStackLib/MyStackLib.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "MyQueueLib >= 1.0.0",
+      "MyStackLib >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/sor-team/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/sor-team/Documents/source/NascondendoUova/NascondendoUova/NascondendoUova.csproj",
+      "projectName": "NascondendoUova",
+      "projectPath": "/Users/sor-team/Documents/source/NascondendoUova/NascondendoUova/NascondendoUova.csproj",
+      "packagesPath": "/Users/sor-team/.nuget/packages/",
+      "outputPath": "/Users/sor-team/Documents/source/NascondendoUova/NascondendoUova/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/sor-team/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {
+            "/Users/sor-team/Documents/source/MyStack_And_MyQueue_CS_Updated/MyStack_And_MyQueue_CS_Updated/MyQueueLib/MyQueueLib/MyQueueLib.csproj": {
+              "projectPath": "/Users/sor-team/Documents/source/MyStack_And_MyQueue_CS_Updated/MyStack_And_MyQueue_CS_Updated/MyQueueLib/MyQueueLib/MyQueueLib.csproj"
+            },
+            "/Users/sor-team/Documents/source/MyStack_And_MyQueue_CS_Updated/MyStack_And_MyQueue_CS_Updated/MyStackLib/MyStackLib/MyStackLib.csproj": {
+              "projectPath": "/Users/sor-team/Documents/source/MyStack_And_MyQueue_CS_Updated/MyStack_And_MyQueue_CS_Updated/MyStackLib/MyStackLib/MyStackLib.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.308/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
