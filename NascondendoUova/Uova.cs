@@ -10,6 +10,8 @@ public enum Colore
 
 class Uovo
 {
+    private static int Cont;
+    public int Id {get; private set;}
     public Colore colore1 {get; private set;}
     public Colore colore2 {get; private set;}
     public bool DaRicolorare;
@@ -18,6 +20,7 @@ class Uovo
         colore1 = c1;
         colore2 = c2;
         DaRicolorare = false;
+        Id = Cont++;
     }
 
     public Uovo()
@@ -25,6 +28,7 @@ class Uovo
         colore1 = RandomColore();
         colore2 = RandomColore();
         DaRicolorare = false;
+        Id = Cont++;
     }
 
     private Colore RandomColore()
@@ -50,5 +54,10 @@ class Uovo
             colore1 = RandomColore();
             colore2 = RandomColore();
         } while (HaColore(c1) || HaColore(c2));
+    }
+
+    public override string ToString()
+    {
+        return $"[Uovo {Id} con colori: {colore1.ToString()} {colore2.ToString()}]";
     }
 }

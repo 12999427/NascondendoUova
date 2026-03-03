@@ -14,7 +14,7 @@ class Anselmo
         {
             while (true)
             {
-                Uovo? uovo_prec = fabbrica.prato?[^1];
+                Uovo? uovo_prec = fabbrica.prato.Count == 0 ? null : fabbrica.prato[^1];
 
                 Uovo uovoPrelevato = await fabbrica.PrelevaUovo();
 
@@ -22,14 +22,21 @@ class Anselmo
                     uovoPrelevato.HaColore(uovo_prec.colore1) ||
                     uovoPrelevato.HaColore(uovo_prec.colore2))
                 {
+                    Console.WriteLine($"Anselmo ha preso un {uovoPrelevato} giusto e lo aggiunge al prato (precedente: {uovo_prec}). Lunghezza prato: " + (fabbrica.prato.Count+1));
                     //lo usa
                     fabbrica.prato.Add(uovoPrelevato);
+
+                    if (fabbrica.prato.Count >= fabbrica.LimiteUovaProdotte)
+                    {
+                        break;
+                    }
                 }
                 else
                 {
                     //lo scarta
+                    Console.WriteLine($"Anselmo fa cooreggere {uovoPrelevato}, che è sbagliato (precedente: {uovo_prec}). Lunghezza prato: " + fabbrica.prato.Count);
                     uovoPrelevato.DaRicolorare = true;
-                    await fabbrica.CorreggiUovoEAccoda(uovoPrelevato);
+                    _ = fabbrica.CorreggiUovoEAccoda(uovoPrelevato);
                 }
             }
         }

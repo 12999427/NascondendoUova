@@ -4,18 +4,20 @@ namespace NascondendoUova;
 
 class Fabbrica
 {
+    public int LimiteUovaProdotte {get; private set;}
     private MyQueue<Uovo> codaUova;
     public Anselmo anselmo {get; private set;}
     private SemaphoreSlim M_codaUova;
     private SemaphoreSlim S_codaUova;
     public List<Uovo> prato {get; private set;}
-    public Fabbrica()
+    public Fabbrica(int maxUova)
     {
         codaUova = new();
         M_codaUova = new(1, 1);
         S_codaUova = new(0);
         prato = new();
         anselmo = new(this);
+        LimiteUovaProdotte = maxUova;
     }
 
     public async Task<Uovo> PrelevaUovo()
@@ -49,9 +51,10 @@ class Fabbrica
         {
             while (true)
             {
-                await Task.Delay(1000);
+                await Task.Delay(1000, ct);
                 Uovo uovoCostruito = new();
                 await AggiungiUovo(uovoCostruito);
+                Console.WriteLine($"Produttori hanno creato un {uovoCostruito} e aggiunto. Dimensione coda: " + (codaUova.Count+1));
             }
         }
         catch (OperationCanceledException)
